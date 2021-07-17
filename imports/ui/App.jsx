@@ -10,10 +10,11 @@ import Preview from './components/Teacher/Preview/Preview.jsx'
 
 import Theatre from './components/Student/Theatre/Theatre.jsx'
 import Survey from './components/Student/Survey/Survey.jsx'
+import Sidebar from './components/Sidebar/Sidebar.jsx';
 
 export const App = () => (
   <div>
-    <div>Header bar here</div>
+    <Sidebar />
     <Switch>
       <Route
         exact path="/"

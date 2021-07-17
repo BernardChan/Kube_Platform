@@ -3,8 +3,11 @@ import React from 'react';
 function Home () {
   return (
     <div>
-      This is the home page...
-      should have a link thing
+      <div>XXXX</div>
+      <div>Switch Here (teacher/student)</div>
+      <div>login deets</div>
+      <div>forgot deets</div>
+      <div>button</div>
     </div>
   );
 }
