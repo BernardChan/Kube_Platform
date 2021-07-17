@@ -29,7 +29,9 @@ Meteor.methods ({
 
     if (error) {
       throw new Meteor.Error(400, 'Bad Request');
-    }
+    }    
+    console.log(result);
+
     return result
   },
 
