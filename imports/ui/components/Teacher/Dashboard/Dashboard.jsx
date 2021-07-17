@@ -1,7 +1,27 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 function Dashboard () {
+  const [inputLink, setInputLink] = React.useState();
+  const [loading, setLoading] = React.useState(false);
+  const history = useHistory();
+
+  const generateLink = () => {
+    // load link and show modal
+    sessionStorage.setItem("inputLink", inputLink)
+    const generatedLink = `localhost:3000/theatre/0?url=${inputLink}` // stub for now
+    sessionStorage.setItem("generatedLink", generatedLink) 
+    setLoading(true)
+
+    // link to generate
+    setTimeout(function(){ 
+      setLoading(false) 
+      history.push('/Teacher/generate')
+    }, 2000);
+  }
+
   return (
     <div>
       <div>
@@ -10,8 +30,24 @@ function Dashboard () {
         </Link>
       </div>
       <div>
+        <div>
+          Generate Video Link For Student
+        </div>
+        <div>
+          <input
+            type="text"
+            id="inputLink"
+            onChange = {e => setInputLink(e.target.value)}
+          />
+        </div>
+        <button onClick = {generateLink}>
+          Generate Link
+        </button>
+        {
+          loading &&
+          <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+        }
       </div>
-      This is the teacher's dashboard
     </div>
   );
 }
