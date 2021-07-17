@@ -50,12 +50,12 @@ export const App = () => (
       />
       {/* Students stuff */}
       <Route
-        exact path="/Theatre/:videoID"
+        exact path="/Theatre/:teacherID"
         component={Theatre}
         key="theatre"
       />
       <Route
-        exact path="/Survey/:videoID"
+        exact path="/Survey/:teacherID/:videoID"
         component={Survey}
         key="survey"
       />

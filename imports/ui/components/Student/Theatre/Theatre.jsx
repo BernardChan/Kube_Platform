@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player'
 function Theatre (props) {
   const [lastPosition, setLastPosition] = useState(0)
   const [videoURL, setVideoURL] = useState('https://youtu.be/VUrFMjXU67I')
-  const videoID = props.match.params.videoID
+  const teacherID = props.match.params.teacherID
 
   useEffect(() => {
     const searchParams = new URLSearchParams(props.location.search)
@@ -15,9 +15,6 @@ function Theatre (props) {
       console.log('couldn\'t play url :(')
     }
   }, [])
-
-
-  console.log(videoURL)
 
   const handleProgress = (state) => {
     if (lastPosition == 0) {
@@ -33,12 +30,12 @@ function Theatre (props) {
   }
 
   const raiseFlag = () => {
-    console.log(videoID + " flag:")
+    console.log(teacherID + " flag:")
     console.log('flag set at ' + lastPosition)
   }
 
   const markForReview = () => {
-    console.log(videoID + " flag:")
+    console.log(teacherID + " flag:")
     console.log('review flag set at ' + lastPosition)
   }
 

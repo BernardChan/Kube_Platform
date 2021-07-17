@@ -4,6 +4,7 @@ function Survey (props) {
   const [videoSurveyText, setVideoSurveyText] = useState('')
   const [email, setEmail] = useState('')
   const videoID = props.match.params.videoID
+  const teacherID = props.match.params.teacherID
 
   const handleSurvey = (event) => {
     setVideoSurveyText(event.target.value)
@@ -11,6 +12,7 @@ function Survey (props) {
 
   const submitSurvey = () => {
     console.log(videoID + " survey:")
+    console.log(teacherID + " is the teacher:")
     console.log(videoSurveyText)
   }
 
