@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player'
 
-function Theatre () {
+function Theatre (props) {
   const [lastPosition, setLastPosition] = useState(0)
+  const [videoURL, setVideoURL] = useState('https://youtu.be/VUrFMjXU67I')
+  const videoID = props.match.params.videoID
+
+  const searchParams = new URLSearchParams(props.location.search)
+  const url = searchParams.get('url')
+  if (ReactPlayer.canPlay(url)) {
+    setVideoURL(url)
+  } else {
+    console.log('couldn\'t play url :(')
+  }
+
+  console.log(url)
 
   const handleProgress = (state) => {
     if (lastPosition == 0) {
@@ -18,10 +30,12 @@ function Theatre () {
   }
 
   const raiseFlag = () => {
+    console.log(videoID + " flag:")
     console.log('flag set at ' + lastPosition)
   }
 
   const markForReview = () => {
+    console.log(videoID + " flag:")
     console.log('review flag set at ' + lastPosition)
   }
 
@@ -29,7 +43,7 @@ function Theatre () {
     <div>
       Video goes here
       <ReactPlayer
-        url='https://youtu.be/VUrFMjXU67I'
+        url={videoURL}
         controls
         onProgress={handleProgress}
       />
