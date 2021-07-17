@@ -7,18 +7,18 @@ import { Meteor } from 'meteor/meteor'
 
 function Dashboard () {
   const [inputLink, setInputLink] = React.useState("");
-  const [vidLen, setVidLen] = React.useState("");
+  const [vidLen, setVidLen] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
   const [vidTitle, setVidTitle] = React.useState("");
   const [course, setCourse] = React.useState("");
   const [generatedLink, setGeneratedLink] = React.useState();
-  const [validVid, setValidVid] = React.useState(false);
+  // const [validVid, setValidVid] = React.useState(false);
   const [previewView, setPreviewView] = React.useState(false);
   const [generateView, setGenerateView] = React.useState(true);
   const history = useHistory();
 
   const generateLink = () => {
-    // load link and show modal
+    // load link and show loading bar
     if (ReactPlayer.canPlay(inputLink)) {
       setGenerateView(false)
       setPreviewView(false)
@@ -48,17 +48,17 @@ function Dashboard () {
     history.push(`${generatedLink}`)
   }
 
-  useEffect(() => {
-    if (ReactPlayer.canPlay(inputLink)) {
-      setValidVid(false)
-    }
-    else {
-      setValidVid(false)
-    }
-  }, [inputLink])
-  const handleDuration = (duration) => {
-    setVidLen(duration)
-  }
+  // useEffect(() => {
+  //   if (ReactPlayer.canPlay(inputLink)) {
+  //     setValidVid(false)
+  //   }
+  //   else {
+  //     setValidVid(false)
+  //   }
+  // }, [inputLink])
+  // const handleDuration = (duration) => {
+  //   setVidLen(duration)
+  // }
 
   return (
     <div>
@@ -107,18 +107,6 @@ function Dashboard () {
           <div>
             Generating Video...
             <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
-          </div>
-        }
-        {
-          validVid &&
-          <div>
-            <br></br>
-            <div>Preview:</div>
-            <ReactPlayer 
-            url={inputLink}
-            controls
-            onDuration={handleDuration}
-            />  
           </div>
         }
         {
