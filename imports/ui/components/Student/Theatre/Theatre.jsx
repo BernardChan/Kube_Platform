@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player'
 
 function Theatre (props) {
@@ -6,15 +6,18 @@ function Theatre (props) {
   const [videoURL, setVideoURL] = useState('https://youtu.be/VUrFMjXU67I')
   const videoID = props.match.params.videoID
 
-  const searchParams = new URLSearchParams(props.location.search)
-  const url = searchParams.get('url')
-  if (ReactPlayer.canPlay(url)) {
-    setVideoURL(url)
-  } else {
-    console.log('couldn\'t play url :(')
-  }
+  useEffect(() => {
+    const searchParams = new URLSearchParams(props.location.search)
+    const url = searchParams.get('url')
+    if (ReactPlayer.canPlay(url)) {
+      setVideoURL(url)
+    } else {
+      console.log('couldn\'t play url :(')
+    }
+  }, [])
 
-  console.log(url)
+
+  console.log(videoURL)
 
   const handleProgress = (state) => {
     if (lastPosition == 0) {
