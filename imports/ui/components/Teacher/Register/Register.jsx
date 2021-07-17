@@ -6,7 +6,7 @@ function Register() {
   const [password, setPassword] = React.useState('');
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
-  const [userType, setUserType] = React.useState('');
+  const [userType, setUserType] = React.useState('teacher');
 
   const submit = () => {
     data = {

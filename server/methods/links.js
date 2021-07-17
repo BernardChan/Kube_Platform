@@ -31,7 +31,7 @@ Meteor.methods ({
     // generate corresponding analytics item
     const analyticsId = Meteor.call('analytics/create', linkId)
 
-    return LinksCollection.update(linkId,
+    LinksCollection.update(linkId,
       {
         $set: {
           analyticsId,
@@ -39,6 +39,9 @@ Meteor.methods ({
 
         }
       })
+
+    const newLink = LinksCollection.findOne(linkId);
+    return newLink.generatedUrl;
     
   },
   
