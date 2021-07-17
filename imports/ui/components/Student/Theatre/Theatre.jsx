@@ -42,13 +42,20 @@ function Theatre (props) {
   return (
     <div>
       Video goes here
+      {(Meteor.user() !== undefined) && <p>Preview</p>}
       <ReactPlayer
         url={videoURL}
         controls
         onProgress={handleProgress}
       />
-      <button onClick={raiseFlag}>Raise flag!</button>
-      <button onClick={markForReview}>Mark for review</button>
+      {(Meteor.user() !== undefined) ?
+        <>
+          <button onClick={raiseFlag}>Raise flag!</button>
+          <button onClick={markForReview}>Mark for review</button>
+        </> :
+        <button onClick={() => { navigator.clipboard.writeText(window.location.href) }}>Copy Kube URL</button>
+      }
+
     </div>
   );
 }
