@@ -2,9 +2,10 @@ import React from 'react';
 
 function Home () {
   return (
-    <>
-      this is the home page
-    </>
+    <div>
+      This is the home page...
+      should have a link thing
+    </div>
   );
 }
 
