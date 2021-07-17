@@ -1,12 +1,30 @@
-import { Mongo } from 'meteor/mongo';
+Meteor.methods ({
 
-// analytics data
-export const Analytics = new Mongo.Collection('analytics');
+  'analytics/create': (linkId) => {
+  
+    const currentUserId = Meteor.userId();
+
+    const data = {
+      uploaderId: currentUserId,
+      linkId,
+      viewCount: 0,
+      dropOffCount: 0,
+      dropOffPoint: [],
+      replayCount: [],
+      flags: [],
+      createdAt: new Date(),
+    }
+
+    return Analytics.insert(data);
+
+  },
+
+});
 
 // _id, string
 // linkId: string
 // viewCount: int,
-// dropOff: int, where students stop watching the video
+// dropOffCount: int, where students stop watching the video
     // when the window is closed or when a video is on pause for more than 1hr
 // dropOffPoint: arr of obj
     // replays: arr of obj

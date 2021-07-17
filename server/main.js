@@ -1,8 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { LinksCollection } from '/server/collections/links';
-// import { AnalyticsCollection } from '/server/collections/analytics';
-// import { UserCollection } from '/server/collections/users';
-// import { LinksCollection } from '/imports/api/links';
+import { LinksCollection, Analytics } from '/lib/collections/collections.js';
 
 function insertLink({ title, url }) {
   LinksCollection.insert({title, url, createdAt: new Date()});
