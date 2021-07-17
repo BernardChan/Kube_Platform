@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link} from 'react-router-dom';
+
 
 function Generate () {
   return (
@@ -12,6 +14,12 @@ function Generate () {
       </div>
       <div>
         {localStorage.getItem("generatedLink")}
+      </div>
+      <br></br>
+      <div>
+        <Link to ="/Teacher/Dashboard">
+          <button> Return to Dashboard </button>
+        </Link>
       </div>
     </div>
   );

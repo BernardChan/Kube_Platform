@@ -11,7 +11,7 @@ function Dashboard () {
   const generateLink = () => {
     // load link and show modal
     localStorage.setItem("inputLink", inputLink)
-    const generatedLink = inputLink // stub for now
+    const generatedLink = `localhost:3000/theatre/1?url=https://${inputLink}` // stub for now
     localStorage.setItem("generatedLink", generatedLink) 
     setLoading(true)
 
