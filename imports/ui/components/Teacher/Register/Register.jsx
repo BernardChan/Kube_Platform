@@ -92,7 +92,7 @@ function Register() {
         </div>
       </form>
       <div>
-        <Link to="/Teacher/dashboard">
+        <Link to="/Teacher/Generate">
           <button id = "submit" onClick = {submit} type = "submit">Submit</button>
         </Link>
       </div>
