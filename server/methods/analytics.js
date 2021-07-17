@@ -19,7 +19,11 @@ Meteor.methods ({
 
   },
 
+
+  // 'analytics/update': (linkId) => {
+
 });
+
 
 // _id, string
 // linkId: string
