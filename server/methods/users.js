@@ -4,9 +4,6 @@ Meteor.methods ({
 
   'users/delete': ({userId, password}) => {
 
-    // check(email, String);
-    // check(password, String);
-
     const currentUser = Meteor.user();
     console.log(currentUser);
 

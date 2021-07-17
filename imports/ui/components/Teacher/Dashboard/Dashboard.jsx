@@ -11,16 +11,18 @@ function Dashboard () {
   const [loading, setLoading] = React.useState(false);
   const [vidTitle, setVidTitle] = React.useState("");
   const [course, setCourse] = React.useState("");
+  const [generatedLink, setGeneratedLink] = React.useState();
   const [validVid, setValidVid] = React.useState(false);
+  const [previewView, setPreviewView] = React.useState(false);
+  const [generateView, setGenerateView] = React.useState(true);
   const history = useHistory();
-
-  ref = player => {
-    this.player = player
-  }
 
   const generateLink = () => {
     // load link and show modal
     if (ReactPlayer.canPlay(inputLink)) {
+      setGenerateView(false)
+      setPreviewView(false)
+
       sessionStorage.setItem("inputLink", inputLink)
       const generateBody = {
         "inputUrl" : inputLink,
@@ -28,22 +30,27 @@ function Dashboard () {
         "vidLen" : vidLen,
         "course" : course
       }
-      
-      const generatedLink = Meteor.call('links/generate', generateBody)
+
+      console.log(generateBody)
+      Meteor.call('links/generate', generateBody)
+      setGeneratedLink(`/theatre/0?url=${inputLink}&teacher=${Meteor.userId()}`) 
       sessionStorage.setItem("generatedLink", generatedLink)
       setLoading(true)
       // link to generate
       setTimeout(function(){ 
         setLoading(false) 
-        history.push('/Teacher/generate')
+        setPreviewView(true)
       }, 2000);
     }
+  }
 
+  const previewLink = () => {
+    history.push(`${generatedLink}`)
   }
 
   useEffect(() => {
     if (ReactPlayer.canPlay(inputLink)) {
-      setValidVid(true)
+      setValidVid(false)
     }
     else {
       setValidVid(false)
@@ -89,23 +96,40 @@ function Dashboard () {
             onChange = {e => setCourse(e.target.value)}
           />
         </div>
-        <button onClick = {generateLink}>
-          Generate Link
-        </button>
+        {
+          generateView &&
+          <button onClick = {generateLink}>
+            Generate Link
+          </button>
+        }
         {
           loading &&
-          <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+          <div>
+            Generating Video...
+            <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+          </div>
         }
         {
           validVid &&
           <div>
             <br></br>
             <div>Preview:</div>
-            <ReactPlayer
+            <ReactPlayer 
             url={inputLink}
             controls
             onDuration={handleDuration}
             />  
+          </div>
+        }
+        {
+          previewView &&
+          <div>
+            <button onClick = {previewLink}>
+              Preview Link
+            </button>
+            <div onClick = {generateLink}>
+              Update Kubo Link details
+            </div>
           </div>
         }
       </div>
