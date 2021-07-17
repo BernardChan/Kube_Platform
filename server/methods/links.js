@@ -26,7 +26,7 @@ Meteor.methods ({
     
     // generate URL
     console.log(Meteor.absoluteUrl())
-    const generatedUrl = `${Meteor.absoluteUrl()}/theatre/${currentUserId}/${linkId}/${data.inputUrl}`
+    const generatedUrl = `${Meteor.absoluteUrl()}theatre/${currentUserId}/${linkId}/${data.inputUrl}`
         
     // generate corresponding analytics item
     const analyticsId = Meteor.call('analytics/create', linkId)
