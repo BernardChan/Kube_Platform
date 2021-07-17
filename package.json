@@ -15,12 +15,5 @@
     "react-player": "^2.9.0",
     "react-router-dom": "^5.2.0",
     "sass": "^1.35.2"
-  },
-  "meteor": {
-    "mainModule": {
-      "client": "client/main.jsx",
-      "server": "server/main.js"
-    },
-    "testModule": "tests/main.js"
   }
 }

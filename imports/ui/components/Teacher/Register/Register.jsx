@@ -9,14 +9,26 @@ function Register() {
   const [userType, setUserType] = React.useState('');
 
   const submit = () => {
-    loginBody = {
+    data = {
       "email": email,
       "password": password, 
       "firstName": firstName,
       "lastName": lastName,
       "userType": userType,
     }
-    console.log(loginBody)
+    
+    console.log(data)
+    
+    // const {
+    //   error, result,
+    // } = 
+    Accounts.createUser(data);    
+
+    // if (error) {
+    //   throw new Meteor.Error(400, 'Bad Request');
+    // }    
+    console.log(`created! ${Meteor.userId()}`);
+    
   }
 
   return (
