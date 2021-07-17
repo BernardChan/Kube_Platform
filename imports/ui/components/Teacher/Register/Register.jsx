@@ -43,7 +43,7 @@ function Register() {
             type="text"
             id="email"
             onChange = {e => setEmail(e.target.value)}
-            />
+          />
         </div>
         <div>
           <label htmlFor = "firstName">
@@ -54,7 +54,7 @@ function Register() {
             type="text"
             id="firstName"
             onChange = {e => setFirstName(e.target.value)}
-            />
+          />
         </div>
         <div>
           <label htmlFor = "lastName">
@@ -65,7 +65,7 @@ function Register() {
             type="text"
             id="lastName"
             onChange = {e => setLastName(e.target.value)}
-            />
+          />
         </div>
         <div>
           <label htmlFor = "password">
@@ -76,7 +76,7 @@ function Register() {
             type="text"
             id="password"
             onChange = {e => setPassword(e.target.value)}
-            />
+          />
         </div>
         <div>
           <label htmlFor = "userType">
