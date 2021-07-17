@@ -26,7 +26,7 @@ function Login () {
             type="text"
             id="email"
             onChange = {e => setEmail(e.target.value)}
-            />
+          />
         </div>
         <div>
           <label htmlFor = "password">
@@ -36,7 +36,7 @@ function Login () {
             type="text"
             id="password"
             onChange = {e => setPassword(e.target.value)}
-            />
+          />
         </div>
         <Link to="/Teacher/Dashboard">
           <button id = "submit" onClick={submit} >Submit</button>
