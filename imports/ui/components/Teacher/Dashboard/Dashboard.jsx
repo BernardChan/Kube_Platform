@@ -6,9 +6,30 @@ import ReactPlayer from 'react-player'
 import { Meteor } from 'meteor/meteor'
 
 function Dashboard () {
+  // const [dropoffPoints, setDropOffPoints] = React.useState([]);
+  const [flags, setFlags] = React.useState();
+  const [replayedSegments, setReplayedSegments] = React.useState();
+
+  const dropoffPoints = (
+    [
+      {timestamp: "0:00-1:00",
+      flagCount: 20,
+      },
+      {timestamp: "10:00-11:00",
+      flagCount: 20,
+      }
+    ]
+  )
   return (
     <div>
-      dashboard
+      data
+      {
+        dropoffPoints.map((field, id) => (
+          <div key = {id}>
+            {field.timestamp} {field.flagCount}
+          </div>
+        ))
+      }
     </div>
   )
 }
