@@ -4,6 +4,7 @@ import { Switch, Route, } from 'react-router-dom'
 import Home from './components/Home/Home.jsx';
 
 import Login from './components/Teacher/Login/Login.jsx'
+import Register from './components/Teacher/Register/Register.jsx'
 import Dashboard from './components/Teacher/Dashboard/Dashboard.jsx'
 import Generate from './components/Teacher/Generate/Generate.jsx'
 import Preview from './components/Teacher/Preview/Preview.jsx'
@@ -26,6 +27,11 @@ export const App = () => (
         exact path="/Teacher"
         component={Login}
         key="login"
+      />
+      <Route
+        exact path="/Teacher/Register"
+        component={Register}
+        key="register"
       />
       <Route
         exact path="/Teacher/Dashboard"
