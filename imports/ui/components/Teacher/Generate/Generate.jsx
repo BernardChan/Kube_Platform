@@ -6,14 +6,14 @@ function Generate () {
   return (
     <div>
       <div>
-        Your Inputted Link: {localStorage.getItem("inputLink")}
+        Your Inputted Link: {sessionStorage.getItem("inputLink")}
       </div>
       <br></br>
       <div>
         Preview your video:
       </div>
       <div>
-        {localStorage.getItem("generatedLink")}
+        {sessionStorage.getItem("generatedLink")}
       </div>
       <br></br>
       <div>

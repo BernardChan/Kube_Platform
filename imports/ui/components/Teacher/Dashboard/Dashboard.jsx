@@ -10,9 +10,9 @@ function Dashboard () {
 
   const generateLink = () => {
     // load link and show modal
-    localStorage.setItem("inputLink", inputLink)
-    const generatedLink = `localhost:3000/theatre/1?url=https://${inputLink}` // stub for now
-    localStorage.setItem("generatedLink", generatedLink) 
+    sessionStorage.setItem("inputLink", inputLink)
+    const generatedLink = `localhost:3000/theatre/0?url=${inputLink}` // stub for now
+    sessionStorage.setItem("generatedLink", generatedLink) 
     setLoading(true)
 
     // link to generate
@@ -35,9 +35,9 @@ function Dashboard () {
         </div>
         <div>
           <input
-              type="text"
-              id="inputLink"
-              onChange = {e => setInputLink(e.target.value)}
+            type="text"
+            id="inputLink"
+            onChange = {e => setInputLink(e.target.value)}
           />
         </div>
         <button onClick = {generateLink}>
