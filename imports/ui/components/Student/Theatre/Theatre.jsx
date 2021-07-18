@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
+import { Link } from 'react-router-dom';
 import './theatre.css';
 
 function Theatre (props) {
@@ -57,6 +58,10 @@ function Theatre (props) {
             <div class="col-12">          
               <div class="preview">
                 <span class="label label-info">Preview</span>
+                <Link to="/Teacher/Generate">
+                  <span id="back">&nbsp;&nbsp;&nbsp; Back to Video Settings</span>
+                  
+                </Link>
               </div>
             </div>
           }
@@ -90,7 +95,12 @@ function Theatre (props) {
                 </button>
               </div>
               </> :
-              <button onClick={() => { navigator.clipboard.writeText(window.location.href) }}>Copy Kube URL</button>
+              <button 
+                onClick={() => { navigator.clipboard.writeText(window.location.href) }}
+                class="btn btn-lg btn-primary"
+                >
+                  Copy Kube URL
+                </button>
             }
         </div>
     </section>
