@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SendPin.css'
 
 function SendPin (props) {
   const [email, setEmail] = useState('')
@@ -17,19 +18,46 @@ function SendPin (props) {
   }
 
   return (
-    <div>
-      <h1>Send Video Pins to yourself</h1>
-      <h2>Email Address</h2>
-      <input
-        type='text'
-        onChange={handleEmail}
-      />
-      <button
-        onClick={emailPins}
-      >Send now</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
 
-      <button>Schedule for later</button>
-      <button>Calendar component</button>
+
+          <div>
+
+
+            <h1>Send Video Pins to yourself</h1>
+
+            <form class="form register-form justify-content-center">
+
+              <div class="form-group">
+
+                <label htmlFor="email">
+                  Email
+          </label>
+                <input
+                  name="email"
+                  type="text"
+                  id="email"
+                  class="form-control"
+                  onChange={handleEmail}
+                />
+              </div>
+
+              <div class="form-group">
+                <button
+                  class="btn btn-lg btn-primary" id="submit" type="submit"
+                  onClick={emailPins}
+                >
+                  Send now</button>
+              </div>
+
+
+
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
