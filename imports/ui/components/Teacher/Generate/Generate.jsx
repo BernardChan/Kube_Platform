@@ -4,6 +4,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import ReactPlayer from 'react-player'
 import { Meteor } from 'meteor/meteor'
+import Navbar from '../Navbar/Navbar';
 
 function Generate () {
   const [inputLink, setInputLink] = React.useState("");
@@ -62,6 +63,7 @@ function Generate () {
 
   return (
     <div>
+      <Navbar/>
       <div>
         <div>
           Generate Video Link For Student

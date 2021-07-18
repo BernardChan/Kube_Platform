@@ -12,10 +12,11 @@ import Preview from './components/Teacher/Preview/Preview.jsx'
 import Theatre from './components/Student/Theatre/Theatre.jsx'
 import Survey from './components/Student/Survey/Survey.jsx'
 import Sidebar from './components/Sidebar/Sidebar.jsx';
+import Navbar from './components/Teacher/Navbar/Navbar.jsx';
 
 export const App = () => (
   <div>
-    {/* <Sidebar /> */}
+    {/* <Navbar /> */}
     <Switch>
       <Route
         exact path="/"

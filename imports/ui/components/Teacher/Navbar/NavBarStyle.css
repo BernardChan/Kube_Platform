@@ -1,0 +1,22 @@
+.navBar{
+  position: absolute;
+  display: flex;
+  width: 1446px;
+  height: 36px;
+  left: 0px;
+  top: 0px;
+  background: #1B73F9;
+}
+
+.navLink{
+  /* position: absolute; */
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  
+
+  color: #FFFFFF;
+}
