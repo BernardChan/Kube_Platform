@@ -1,6 +1,7 @@
 Meteor.methods({
   'email/send': ({
     email,
+    flags,
   }) => {
     console.log(email)
     if (email == undefined) return
@@ -11,12 +12,12 @@ Meteor.methods({
       from: 'william.liu142@gmail.com', // Change to your verified sender
       subject: 'Sending with SendGrid is Fun',
       text: 'and easy to do anywhere, even with Node.js',
-      html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+      html: flags,
     }
     sgMail
       .send(msg)
       .then(() => {
-        console.log('Email sent')
+        console.log('Email sent!')
       })
       .catch((error) => {
         console.error(error)
