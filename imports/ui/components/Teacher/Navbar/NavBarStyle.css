@@ -15,10 +15,11 @@
   font-style: normal;
   font-weight: bold;
   font-size: 10px;
-  color: #FFFFFF;
+  color: #c4c4c4;
 }
 
 .logoStyle {
+  padding: 10px 0 0 0;
   position: absolute;
   right: 5px;
 }
