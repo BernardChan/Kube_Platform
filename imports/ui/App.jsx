@@ -12,6 +12,7 @@ import Preview from './components/Teacher/Preview/Preview.jsx'
 import Theatre from './components/Student/Theatre/Theatre.jsx'
 import Survey from './components/Student/Survey/Survey.jsx'
 import Sidebar from './components/Sidebar/Sidebar.jsx';
+import SendPin from './components/Student/SendPin/SendPin.jsx';
 
 export const App = () => (
   <div>
@@ -58,6 +59,11 @@ export const App = () => (
         exact path="/Survey/:teacherID/:videoID"
         component={Survey}
         key="survey"
+      />
+      <Route
+        exact path="/Send/:teacherID/:videoID"
+        component={SendPin}
+        key="sendpin"
       />
     </Switch>
   </div>
