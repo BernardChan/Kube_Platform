@@ -9,7 +9,8 @@ function SendPin (props) {
 
   const emailPins = () => {
     const data = {
-      "email": email
+      "email": email,
+      "flags": sessionStorage.getItem(props.match.params.teacherID)
     }
     console.log(data)
     Meteor.call('email/send', data)
