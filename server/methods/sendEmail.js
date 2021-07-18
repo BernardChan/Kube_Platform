@@ -1,3 +1,5 @@
+import {HTTP} from 'meteor/http';
+
 Meteor.methods({
   'email/send': ({
     email,
