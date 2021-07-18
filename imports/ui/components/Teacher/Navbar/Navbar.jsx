@@ -9,10 +9,21 @@ function NavBar() {
   return (
     <div>
       <div class = "navBar">
-        <div class = "navLink" onClick = {() => {history.push('/Teacher/Dashboard')}}>   Dashboard   </div>
-        <div class = "navLink" onClick = {() => {history.push('/Teacher/Generate')}}>   Generate   </div>
+        <div class="row justify-content-center">
+
+        <div class = "navLink" onClick = {() => {history.push('/Teacher/Dashboard')}}>   
+          <span>
+          Dashboard   
+          </span>
+        </div>
+        <div class = "navLink" onClick = {() => {history.push('/Teacher/Generate')}}>   
+          <span>
+          Generate   
+          </span>
+        </div>
       </div>
       <img class = "logoStyle" src="/assets/logo.png" />  
+        </div>
     </div>
   );
 }

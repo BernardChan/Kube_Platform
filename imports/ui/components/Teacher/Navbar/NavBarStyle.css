@@ -2,7 +2,7 @@
   position: absolute;
   display: flex;
   width: 100%;
-  height: 36px;
+  height: 12px;
   left: 0px;
   top: 0px;
   background: #1B73F9;
@@ -14,7 +14,7 @@
   padding-right: 20px;
   font-style: normal;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 10px;
   color: #FFFFFF;
 }
 

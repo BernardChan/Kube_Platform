@@ -22,7 +22,7 @@ function Register() {
     
     Accounts.createUser(data);    
  
-    console.log(`created new user! ${Meteor.userId()}`);
+    console.log(`created new user!`);
     
   }
 
