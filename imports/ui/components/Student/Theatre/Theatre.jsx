@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 import './theatre.css';
+import Navbar from '../../Teacher/Navbar/Navbar';
 
 function Theatre (props) {
   const [lastPosition, setLastPosition] = useState(0)
@@ -43,6 +44,9 @@ function Theatre (props) {
 
   return (
     <div class="container">
+      {Meteor.user() === undefined &&
+        <Navbar/>
+      }
       <section>
         <div class="row">
           <div class="col-12">

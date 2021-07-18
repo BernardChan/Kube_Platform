@@ -50,18 +50,6 @@ function Generate () {
     history.push(`${generatedLink}`)
   }
 
-  // useEffect(() => {
-  //   if (ReactPlayer.canPlay(inputLink)) {
-  //     setValidVid(false)
-  //   }
-  //   else {
-  //     setValidVid(false)
-  //   }
-  // }, [inputLink])
-  // const handleDuration = (duration) => {
-  //   setVidLen(duration)
-  // }
-
   return (
     <div class="container">
       <Navbar/>
