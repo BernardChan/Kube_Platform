@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
+import './theatre.css';
 
 function Theatre (props) {
   const [lastPosition, setLastPosition] = useState(0)
@@ -40,23 +41,60 @@ function Theatre (props) {
   }
 
   return (
-    <div>
-      Video goes here
-      {(Meteor.user() !== undefined) && <p>Preview</p>}
-      <ReactPlayer
-        url={videoURL}
-        controls
-        onProgress={handleProgress}
-      />
-      {(Meteor.user() !== undefined) ?
-        <>
-          <button onClick={raiseFlag}>Raise flag!</button>
-          <button onClick={markForReview}>Mark for review</button>
-        </> :
-        <button onClick={() => { navigator.clipboard.writeText(window.location.href) }}>Copy Kube URL</button>
-      }
+    <div class="container">
+      <section>
+        <div class="row">
+          <div class="col-12">
+            <h2>
+              Intro to Mobile Applications            
+            </h2>
+            <h6>
+              COMP0000
+            </h6>
+          </div>
 
-    </div>
+          {(Meteor.user() !== undefined) && 
+            <div class="col-12">          
+              <div class="preview">
+                <span class="label label-info">Preview</span>
+              </div>
+            </div>
+          }
+
+          <div class="col-12">
+
+          <ReactPlayer
+            url={videoURL}
+            controls
+            onProgress={handleProgress}
+            />
+          </div>
+
+        </div>
+        <div class="row">
+          {(Meteor.user() !== undefined) ?
+              <>
+              <div class="col-12">
+                <button 
+                  onClick={raiseFlag}
+                  class="btn btn-warning"
+                >
+                  Flag section
+                </button>
+
+                <button 
+                  onClick={markForReview}
+                  class="btn btn-info"
+                >
+                  Mark for review
+                </button>
+              </div>
+              </> :
+              <button onClick={() => { navigator.clipboard.writeText(window.location.href) }}>Copy Kube URL</button>
+            }
+        </div>
+    </section>
+  </div>
   );
 }
 export default Theatre;

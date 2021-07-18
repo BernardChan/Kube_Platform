@@ -1,0 +1,24 @@
+h6 {
+  color: #787878;
+  font-size: 16px;
+
+}
+
+
+.preview {
+  margin: 10px 0;
+
+}
+.label-info {
+  background: #75ACFF;
+  padding: 3px 15px;
+  border-radius: 6px;
+  color: white;
+  font-size: 20px;
+}
+
+.btn {
+  display: inline-block;
+  width: 200px;
+  margin: 10px 20px 0 0;
+}
