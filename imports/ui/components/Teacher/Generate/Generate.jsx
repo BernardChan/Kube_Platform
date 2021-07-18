@@ -4,6 +4,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import ReactPlayer from 'react-player'
 import { Meteor } from 'meteor/meteor'
+import './generate.css';
 
 function Generate () {
   const [inputLink, setInputLink] = React.useState("");
@@ -61,66 +62,112 @@ function Generate () {
   // }
 
   return (
-    <div>
-      <div>
-        <div>
-          Generate Video Link For Student
+    <div class="container">
+      <section>
+        <div class="header">
+            <div class="row justify-content-center">
+              <img src="/assets/file-icon.png" class="file-icon"/>
+            </div>
         </div>
-        <div>
-          <label htmlFor = "inputLink">
-            Input Link:
-          </label>
-          <input
-            type="text"
-            id="inputLink"
-            onChange = {e => setInputLink(e.target.value)}
-          />
+      </section>
+      <section>
+        <div class="row justify-content-center">
+          <h1>
+            Generate Video Link For Student
+          </h1>
         </div>
-        <div>
-          <label htmlFor = "vidTitle">
-            Video Title:
-          </label>
-          <input
-            type="text"
-            id="vidTitle"
-            onChange = {e => setVidTitle(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor = "course">
-            Course:
-          </label>
-          <input
-            type="text"
-            id="course"
-            onChange = {e => setCourse(e.target.value)}
-          />
-        </div>
-        {
-          generateView &&
-          <button onClick = {generateLink}>
-            Generate Link
-          </button>
-        }
-        {
-          loading &&
-          <div>
-            Generating Video...
-            <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+        <div class="row">
+          
+
+
+          <div class="col-12">
+
+            <form class="form justify-content-center">
+              
+              <div class="row justify-content-center">
+                <div class="form-group long">
+                <label htmlFor = "inputLink">
+                    Input Link
+                  </label>
+                  <input
+                    type="text"
+                    id="inputLink"
+                    class="form-control"
+                    onChange = {e => setInputLink(e.target.value)}
+                  />
+                </div>
+              </div>
+            
+              <div class="row justify-content-center">
+                <div class="form-group long">
+                  <label htmlFor = "vidTitle">
+                    Video Title
+                  </label>
+                  <input
+                    type="text"
+                    id="vidTitle"
+                    onChange = {e => setVidTitle(e.target.value)}
+                    class="form-control"
+                  />
+                </div>                           
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="form-group long">
+                    <label htmlFor = "course">
+                      Course
+                    </label>
+                    <input
+                      type="text"
+                      id="course"
+                      onChange = {e => setCourse(e.target.value)}
+                      class="form-control"
+                    />
+                </div>
+              </div>
+              
+            </form>          
           </div>
-        }
-        {
-          previewView &&
-          <div>
-            <button onClick = {previewLink}>
-              Preview Link
-            </button>
-            <div onClick = {generateLink}>
-              Update Kubo Link details
+        
+          <div class="col-12">
+            <div class="row justify-content-center">
+              {
+                generateView &&
+                <button 
+                  class="btn btn-lg"
+                  onClick = {generateLink
+                }>                                   
+                  Generate Link
+                </button>
+              }
+              {
+                loading &&
+                <div>
+                  Generating Video...
+                  <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+                </div>
+              }
+              {
+                previewView &&
+                <div>
+                  <button 
+                    class="btn btn-lg btn-primary"
+                    onClick = {previewLink}
+                  >
+                    Preview Link
+                  </button>
+                  <div onClick = {generateLink}>
+                    <h5>
+                      Update Kubo Link details
+                    </h5>
+                  </div>
+                </div>
+              }
+              
             </div>
           </div>
-        }
-      </div>
+        </div>
+      </section>
     </div>
   );
 }
