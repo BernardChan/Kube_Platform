@@ -3,11 +3,7 @@ import React from 'react';
 function Home () {
   return (
     <div>
-      <div>XXXX</div>
-      <div>Switch Here (teacher/student)</div>
-      <div>login deets</div>
-      <div>forgot deets</div>
-      <div>button</div>
+      <img src="/assets/landing-logo.png" class="logoOpenPage"/>
     </div>
   );
 }

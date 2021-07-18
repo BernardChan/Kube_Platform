@@ -16,35 +16,69 @@ function Login () {
   }
 
   return (
-    <div>
-      <form>
-        <div>
-          <label htmlFor = "email">
-            Email:
-          </label>
-          <input
-            type="text"
-            id="email"
-            onChange = {e => setEmail(e.target.value)}
-          />
+    <div class="container">
+      <section>
+      <div class="row justify-content-center">
+        <img src="/assets/landing-logo.png" class="logo"/>
+      </div>
+      </section>
+      <section>
+        <div class="row justify-content-center">
+          <div class="col-12">
+
+            <form class="form register-form justify-content-center">
+              <div class="row justify-content-center">
+                  <div class="form-group long">
+                    <label htmlFor = "email">
+                    Email
+                  </label>
+                  <input
+                    name="email"
+                    type="text"
+                    id="email"
+                    class="form-control"
+                    onChange = {e => setEmail(e.target.value)}
+                  />
+                  </div>
+                </div>
+              <div>
+              <div class="row justify-content-center">
+                <div class="form-group long">
+                  <label htmlFor = "password">
+                    Password:
+                  </label>
+                  <input
+                    name="password"
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    onChange = {e => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+              </div>
+            </form>
+            </div>
+          </div>
+        </section>
+      <div class="row justify-content-center">
+        <div class="form-group">
+            <Link to="/Teacher/Generate">
+              <button class="btn btn-lg btn-primary" id="submit" onClick = {submit} type = "submit">
+                Log In 
+              </button>
+            </Link>
         </div>
-        <div>
-          <label htmlFor = "password">
-            Password:
-          </label>
-          <input
-            type="text"
-            id="password"
-            onChange = {e => setPassword(e.target.value)}
-          />
+      </div>
+      <div class="row justify-content-center">
+        <div class="form-group">
+          <div id="login">
+            <Link to ="/Teacher/Register">
+              New User             
+            </Link>
+          </div>
         </div>
-        <Link to="/Teacher/Generate">
-          <button id = "submit" onClick={submit} >Submit</button>
-        </Link>
-      </form>
-      <Link to="/Teacher/Register">
-          <button id = "register">Register</button>
-      </Link>
+      </div>
     </div>
   );
 }
