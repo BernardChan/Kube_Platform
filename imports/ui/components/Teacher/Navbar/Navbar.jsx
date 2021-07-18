@@ -9,9 +9,10 @@ function NavBar() {
   return (
     <div>
       <div class = "navBar">
+        <div class="row justify-content-center">
+
         <div class = "navLink" onClick = {() => {history.push('/Teacher/Dashboard')}}>   
           <span>
-
           Dashboard   
           </span>
         </div>
@@ -22,6 +23,7 @@ function NavBar() {
         </div>
       </div>
       <img class = "logoStyle" src="/assets/logo.png" />  
+        </div>
     </div>
   );
 }
