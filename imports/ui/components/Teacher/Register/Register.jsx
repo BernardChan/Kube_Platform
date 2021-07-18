@@ -89,7 +89,7 @@ function Register() {
                   </label>
                   <input
                     name="password"
-                    type="text"
+                    type="password"
                     id="password"
                     class="form-control"
                     onChange = {e => setPassword(e.target.value)}
