@@ -15,7 +15,7 @@ import Sidebar from './components/Sidebar/Sidebar.jsx';
 
 export const App = () => (
   <div>
-    <Sidebar />
+    {/* <Sidebar /> */}
     <Switch>
       <Route
         exact path="/"
