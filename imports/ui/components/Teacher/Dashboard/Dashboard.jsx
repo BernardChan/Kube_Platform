@@ -5,9 +5,10 @@ import Loader from "react-loader-spinner";
 import ReactPlayer from 'react-player'
 import { Meteor } from 'meteor/meteor'
 import './dashboard.css';
+import Navbar from '../Navbar/Navbar';
 
 function Dashboard () {
-
+  
   const dropoffPoints = (
     [
       {timestamp: "00:00-10:00",
@@ -43,6 +44,7 @@ function Dashboard () {
 
   return (      
     <div class="container">
+      <Navbar/>
       <div class="dashboard">
         <div class="header">
           <section>

@@ -4,6 +4,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import ReactPlayer from 'react-player'
 import { Meteor } from 'meteor/meteor'
+import Navbar from '../Navbar/Navbar';
 import './generate.css';
 
 function Generate () {
@@ -49,20 +50,9 @@ function Generate () {
     history.push(`${generatedLink}`)
   }
 
-  // useEffect(() => {
-  //   if (ReactPlayer.canPlay(inputLink)) {
-  //     setValidVid(false)
-  //   }
-  //   else {
-  //     setValidVid(false)
-  //   }
-  // }, [inputLink])
-  // const handleDuration = (duration) => {
-  //   setVidLen(duration)
-  // }
-
   return (
     <div class="container">
+      <Navbar/>
       <section>
         <div class="header">
             <div class="row justify-content-center">
