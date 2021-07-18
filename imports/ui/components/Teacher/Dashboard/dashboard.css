@@ -6,6 +6,10 @@
   height: auto;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .table-title {
   background: #B6D3FF;
   font-weight: 700;
