@@ -7,7 +7,41 @@ import { Meteor } from 'meteor/meteor'
 import './dashboard.css';
 
 function Dashboard () {
-  return (
+
+  const dropoffPoints = (
+    [
+      {timestamp: "00:00-10:00",
+      flagCount: 5,
+      },
+      {timestamp: "10:00-20:00",
+      flagCount: 10,
+      }
+    ]
+  )
+
+  const flags = (
+    [
+      {timestamp: "00:00-10:00",
+      flagCount: 8,
+      },
+      {timestamp: "10:00-20:00",
+      flagCount: 4,
+      }
+    ]
+  )
+
+  const replayedSegments = (
+    [
+      {timestamp: "09:15-10:31",
+      flagCount: 3,
+      },
+      {timestamp: "15:00-16:20",
+      flagCount: 4,
+      }
+    ]
+  )
+
+  return (      
     <div class="container">
       <div class="dashboard">
         <div class="header">
@@ -77,7 +111,57 @@ function Dashboard () {
 
             </div>
             <div class="col-4">
-              {/* BERNARD TO ADD:  */}
+              <table >
+                <td class='data-title'>
+                  Drop Off Points
+                </td>
+                <tr>
+                  {
+                    dropoffPoints.map((field, id) => (
+                      <div key = {id}>
+                        <tr>
+                          <td><b>{field.timestamp}</b></td>
+                          <td>{field.flagCount}</td>
+                        </tr>
+                      </div>
+                    ))
+                  }
+                </tr>
+              </table>
+              <table >
+                <td class='data-title'>
+                  Flags
+                </td>
+                <tr>
+                  {
+                    flags.map((field, id) => (
+                      <div key = {id}>
+                        <tr>
+                          <td><b>{field.timestamp}</b></td>
+                          <td>{field.flagCount}</td>
+                        </tr>
+                      </div>
+                    ))
+                  }
+                </tr>
+              </table>
+              <table>
+                <td class='data-title'>
+                  Replayed Segments
+                </td>
+                <tr>
+                  {
+                    replayedSegments.map((field, id) => (
+                      <div key = {id}>
+                        <tr>
+                          <td><b>{field.timestamp}</b></td>
+                          <td>{field.flagCount}</td>
+                        </tr>
+                      </div>
+                    ))
+                  }
+                </tr>
+              </table>
             </div>
           </div>
         </section>
