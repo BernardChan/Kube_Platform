@@ -147,7 +147,7 @@ function Generate () {
                     Preview Link
                   </button>
                   <div onClick = {generateLink}>
-                    <h5>
+                    <h5 class = "underline">
                       Update Kubo Link details
                     </h5>
                   </div>
