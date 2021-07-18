@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 import './theatre.css';
+import Navbar from '../../Teacher/Navbar/Navbar';
 
 function Theatre (props) {
   const [lastPosition, setLastPosition] = useState(0)
   const [videoURL, setVideoURL] = useState('https://youtu.be/VUrFMjXU67I')
   const teacherID = props.match.params.teacherID
+
+  var reviewItems = []
 
   useEffect(() => {
     const searchParams = new URLSearchParams(props.location.search)
@@ -39,10 +42,30 @@ function Theatre (props) {
   const markForReview = () => {
     console.log(teacherID + " flag:")
     console.log('review flag set at ' + lastPosition)
+
+    if (sessionStorage.getItem(teacherID).length == 0 || sessionStorage.getItem(teacherID) == null) {
+      reviewItems = []
+      sessionStorage.setItem(teacherID, JSON.stringify(reviewItems))
+    } else {
+      console.log(sessionStorage.getItem(teacherID))
+      reviewItems = JSON.parse(sessionStorage.getItem(teacherID))
+    }
+
+
+    if (reviewItems.length == 0) {
+      reviewItems = [lastPosition]
+    } else {
+      reviewItems.push(lastPosition)
+    }
+
+    sessionStorage.setItem(teacherID, JSON.stringify(reviewItems))
   }
 
   return (
     <div class="container">
+      {Meteor.user() === undefined &&
+        <Navbar/>
+      }
       <section>
         <div class="row">
           <div class="col-12">
