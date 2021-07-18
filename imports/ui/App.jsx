@@ -16,7 +16,7 @@ import SendPin from './components/Student/SendPin/SendPin.jsx';
 
 export const App = () => (
   <div>
-    <Sidebar />
+    {/* <Sidebar /> */}
     <Switch>
       <Route
         exact path="/"
