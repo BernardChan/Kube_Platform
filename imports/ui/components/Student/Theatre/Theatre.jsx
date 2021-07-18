@@ -6,6 +6,8 @@ function Theatre (props) {
   const [videoURL, setVideoURL] = useState('https://youtu.be/VUrFMjXU67I')
   const teacherID = props.match.params.teacherID
 
+  var reviewItems = []
+
   useEffect(() => {
     const searchParams = new URLSearchParams(props.location.search)
     const url = searchParams.get('url')
@@ -37,6 +39,23 @@ function Theatre (props) {
   const markForReview = () => {
     console.log(teacherID + " flag:")
     console.log('review flag set at ' + lastPosition)
+
+    if (sessionStorage.getItem(teacherID).length == 0 || sessionStorage.getItem(teacherID) == null) {
+      reviewItems = []
+      sessionStorage.setItem(teacherID, JSON.stringify(reviewItems))
+    } else {
+      console.log(sessionStorage.getItem(teacherID))
+      reviewItems = JSON.parse(sessionStorage.getItem(teacherID))
+    }
+
+
+    if (reviewItems.length == 0) {
+      reviewItems = [lastPosition]
+    } else {
+      reviewItems.push(lastPosition)
+    }
+
+    sessionStorage.setItem(teacherID, JSON.stringify(reviewItems))
   }
 
   return (
