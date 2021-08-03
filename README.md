@@ -21,3 +21,6 @@ Kube, a video viewing platform and analytics dashboard that gives students the o
 
 **Tech Stack:**
 ReactJS, Meteor Framework, MongoDB
+
+**Prototype:**
+https://www.figma.com/proto/QRz44pQbgRcBKQcW2TBQUs/CSE-Hackathon-Mockup?node-id=9%3A556
